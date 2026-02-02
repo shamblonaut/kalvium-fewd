@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.emoji button {
+    font-size: 24px;
+}
+
+body.meme {
+    background: url("assets/meme.jpg") no-repeat center center fixed;
+    background-size: contain;
+    color: #f4ff1a;
+}
+
+body.meme h1, body.meme .result, body.meme .scoreboard p, body.meme label {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+button {
+  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.result {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#player-choice,
+#computer-choice {
+  margin: 5px 0;
+}
+
+#outcome {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.scoreboard p {
+  font-size: 16px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.streak {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    color: gold;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.win {
+  animation: celebrate 0.5s ease-in-out;
+}
+
+.settings {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.field {
+  margin: 10px 0;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.high-score {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.high-score p {
+  font-size: 18px;
+  font-weight: bold;
+}

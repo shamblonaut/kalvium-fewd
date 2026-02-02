@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe Ultimate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tic Tac Toe</h1>
+
+      <div class="controls">
+        <label>
+          <input type="radio" name="mode" value="pvp" checked /> 2 Player
+        </label>
+        <label> <input type="radio" name="mode" value="ai" /> vs AI </label>
+      </div>
+
+      <div class="scoreboard">
+        <div class="score-box">
+          <span id="score-x">0</span>
+          <small>Player X</small>
+        </div>
+        <div class="score-box">
+          <span id="score-draw">0</span>
+          <small>Draws</small>
+        </div>
+        <div class="score-box">
+          <span id="score-o">0</span>
+          <small>Player O</small>
+        </div>
+      </div>
+
+      <div class="status" id="status-text">Player X's Turn</div>
+
+      <div class="board" id="board">
+        <div class="cell" data-row="0" data-col="0"></div>
+        <div class="cell" data-row="0" data-col="1"></div>
+        <div class="cell" data-row="0" data-col="2"></div>
+        <div class="cell" data-row="1" data-col="0"></div>
+        <div class="cell" data-row="1" data-col="1"></div>
+        <div class="cell" data-row="1" data-col="2"></div>
+        <div class="cell" data-row="2" data-col="0"></div>
+        <div class="cell" data-row="2" data-col="1"></div>
+        <div class="cell" data-row="2" data-col="2"></div>
+      </div>
+
+      <div class="actions">
+        <button id="btn-rematch">Rematch (Keep Stats)</button>
+        <button id="btn-reset" class="secondary">New Game (Reset All)</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

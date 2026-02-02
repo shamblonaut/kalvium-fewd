@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #1a1a2e;
+  --board-bg: #16213e;
+  --text-color: #e94560;
+  --accent-color: #0f3460;
+  --highlight: #ffd700;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: var(--board-bg);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.score-box span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Controls & Status */
+.controls {
+  margin-bottom: 15px;
+}
+
+.status {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  height: 1.5rem;
+}
+
+/* The Grid */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: var(--accent-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+  max-width: 300px;
+}
+
+.cell {
+  background-color: var(--board-bg);
+  height: 90px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.cell:hover {
+  background-color: #233257;
+}
+
+/* Player Colors & Animations */
+.cell.x {
+  color: #4cc9f0;
+  text-shadow: 0 0 10px #4cc9f0;
+}
+
+.cell.o {
+  color: #f72585;
+  text-shadow: 0 0 10px #f72585;
+}
+
+/* Winning Animation (Part I Step 5) */
+.cell.winner {
+  background-color: rgba(255, 215, 0, 0.2);
+  border: 2px solid var(--highlight);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--text-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: opacity 0.2s;
+}
+
+button.secondary {
+  background-color: #555;
+}
+
+button:hover {
+  opacity: 0.8;
+}
