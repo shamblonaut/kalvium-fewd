@@ -1,11 +1,51 @@
-/* ------------------- Controls / Buttons ------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 1rem;
+}
 
+/* Header */
+header {
+  text-align: center;
+}
+
+/* Search */
+.search-container {
+  max-width: 400px;
+  margin: 1rem auto;
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.7rem 2.5rem 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+.clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Controls */
 .controls {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .controls .filters,
@@ -22,30 +62,43 @@
   background-color: #667eea;
   color: white;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
-
-.controls button:hover {
-  background-color: #556cd6;
-  transform: translateY(-2px);
 }
 
 .controls button.active {
   background-color: #764ba2;
 }
 
-/* ------------------- Recipe Card ------------------- */
+/* Counter */
+.recipe-info {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Recipe Card */
 .recipe-card {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
-/* ------------------- Toggle Buttons ------------------- */
+
+/* Favorite */
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Toggle Buttons */
 .toggle-btn {
   margin-top: 0.5rem;
   margin-right: 0.5rem;
@@ -55,45 +108,24 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.85rem;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
 }
-.toggle-btn:hover {
-  background-color: #ea580c;
-  transform: translateY(-2px);
-}
-/* ------------------- Expandable Sections ------------------- */
-/* Hidden by default */
+
+/* Expandable Sections */
 .steps-container,
 .ingredients-container {
-  display: none; /* Hidden initially */
-  margin-top: 0.5rem; /* Spacing from buttons */
-  padding-left: 1rem; /* Indent content */
-  background-color: #f9f9f9; /* Slight highlight */
-  border-left: 3px solid #667eea; /* Visual cue */
-  border-radius: 4px;
+  display: none;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  background-color: #f9f9f9;
+  border-left: 3px solid #667eea;
 }
-/* Visible when toggled */
-.steps-container.visible,
-.ingredients-container.visible {
-  display: block; /* Show container */
-}
-/* ------------------- Nested Steps ------------------- */
-.steps-container ol {
-  padding-left: 0; /* Remove default padding */
-  margin: 0;
-}
-.steps-container li {
-  margin: 5px 0; /* Space between steps */
-  line-height: 1.4;
-  position: relative;
-}
-/* Arrow indicator for substeps */
-.steps-container li::before {
-  content: "→";
-  position: absolute;
-  left: -1.2em; /* Adjust depending on nesting */
-  color: #764ba2;
+
+/* Responsive */
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+  }
+  .controls button {
+    width: 100%;
+  }
 }
