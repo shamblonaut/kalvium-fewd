@@ -16,6 +16,14 @@
         <button id="search-btn">🔍</button>
       </div>
 
+      <div id="recent-searches-section" class="recent-searches-section">
+        <div class="recent-searches-header">
+          <h3 class="recent-searches-title">Recent Searches</h3>
+          <button id="clear-history-btn" class="clear-history-btn">Clear</button>
+        </div>
+        <div id="recent-searches-container"></div>
+      </div>
+
       <div id="weather-display">
         <p class="loading">Loading weather data...</p>
       </div>
@@ -25,6 +33,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Your JavaScript -->
+    <script src="config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
