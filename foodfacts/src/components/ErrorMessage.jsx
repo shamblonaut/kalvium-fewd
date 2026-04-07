@@ -1,5 +1,7 @@
+import Alert from "@mui/material/Alert";
+
 function ErrorMessage({ message }) {
-  return <p style={{ color: "red" }}>{message}</p>;
+  return <Alert severity="error">{message}</Alert>;
 }
 
 export default ErrorMessage;
